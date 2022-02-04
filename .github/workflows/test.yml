@@ -1,0 +1,27 @@
+name: Publish
+on: [push]
+jobs:
+  mac_x64:
+    name: MacOS
+    runs-on: macos-11
+    steps:  
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: 'Test'
+        run: dotnet run
+  linux_x64:
+    name: Linux
+    runs-on: ubuntu-18.04
+    steps:  
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: 'Test'
+        run: dotnet run
+  windows_x64:
+    name: Windows
+    runs-on: windows-latest
+    steps:  
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: 'Test'
+        run: dotnet run
